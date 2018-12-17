@@ -16,20 +16,6 @@ os.chdir(path2png)
 print(os.getcwd())
 
 
-print(os.uname())
-
-#rename files.... later
-
-
-
-
-
-"""
-targetImage = Image.open("Screen Shot 2018-03-27 at 12.09.36 AM.png")
-rgb_im = targetImage.convert('RGB')
-os.chdir(path2jpg)
-rgb_im.save('test.jpg')
-"""
 directory = os.fsencode(path2png)
 
 for file in os.listdir(directory):
@@ -41,8 +27,9 @@ for file in os.listdir(directory):
         rgb_im.save(imageName + str(imageNum) +'.jpg')
         imageNum = imageNum + 1
         os.chdir(path2png)
-
+        os.remove(file)
 
     else:
         continue
-    
+
+
